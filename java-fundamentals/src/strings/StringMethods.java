@@ -1,64 +1,63 @@
 package strings;
+
 public class StringMethods {
   public static void main(String args[]) {
-    int x =10, y=20;
-    float b = 12.56f;
-    char c = 'A';
-    String str = "Java Program";
+    String str = "Java";
+    System.out.println("length: "+ str.length());
 
-    //println
-    System.out.println("Sum is " + x+y);
-    System.out.println(x+y + " Sum");
-    System.out.println("Sum "+ (x+y));
-    System.out.println("Sum of "+ x + " and "+ y + " is " + (x+y));
+    System.out.println("to lower case: "+ str.toLowerCase());
 
-    //print
-    System.out.print("Sum is " + x+y);
-    System.out.print(" Sum is " + (x+y));
+    String str1 = "   Welcome   ";
+    System.out.println("trim : "+ str1.trim());
 
-    //printf
-    System.out.printf("\nHello\n");
-    System.out.printf("Hello %d %f %c World\n", x, b, c);
-    System.out.printf("Hello %o %f %c World\n", x, b, c);
-    System.out.printf("Hello %x %f %c World\n", x, b, c);
-    //System.out.printf("Hello %f %c World\n", b);  // java.util.MissingFormatArgumentException
-    //System.out.printf("Hello %f World\n", x);  //  java.util.IllegalFormatConversionException
-    System.out.printf("\nHello %e World\n", b);
-    System.out.printf("Hello %g World\n", b);
-    System.out.printf("Hello %s World\n", str);
+    String str2 = str1.trim();
+    System.out.println("substring:"+ str2.substring(3));
+    System.out.println("substring:"+ str2.substring(3, 6));
 
-    //Format specifier consists :  %[argument_index$][flags][width][.precision]conversion 
-    System.out.printf("%1$d %1$d %1$d\n", x);   // argument index
-    System.out.printf("%1$d %1$d %2$d\n", x, y);
-    System.out.printf("%1$d %1$d %2$f\n", x, b);
-    System.out.printf("%3$s %2$f %1$d\n", x, b, str);
+    System.out.println("replace : " + str2.replace('e', 'k'));
 
-    System.out.printf("\n%d\n", x);
-    System.out.printf("%5d\n", x);   // width = 5 
-    System.out.printf("%05d\n", x);  // 0 is a flag 
-    System.out.printf("%(5d\n", -x); //  (10)
-    System.out.printf("%(5d\n", x);  //    10 
-    System.out.printf("%(d\n", -x);  // (10)
-    System.out.printf("%0(5d\n", -x); //(010)
-    System.out.printf("%(05d\n", -x);
-    System.out.printf("%+5d\n", x); // +10
-    System.out.printf("line %-10d", -x);
+    String str3 = "wwww.abcd.org";
+    System.out.println(str3.startsWith("wwww"));
+    System.out.println(str3.startsWith("abc", 5));
+    System.out.println(str3.startsWith("https"));
+    System.out.println(str3.endsWith(".org"));
 
-    float a = 123.45f;
-    float f = 123.43648f;
-    System.out.printf("%f\n", a);
-    System.out.printf("%6f\n", a);
-    System.out.printf("%6.3f\n", a);
-    System.out.printf("%6.2f\n", a);
-    System.out.printf("%6.2f\n", f);
-    System.out.printf("%6.2f\n", 8458436.45f);
+    System.out.println(str3.charAt(6));
 
-    a = 3.45f;
-    System.out.printf("%6.2f\n", a);
-    System.out.printf("%06.2f\n", a);
+    System.out.println("index of . : "+ str3.indexOf('.'));
+    System.out.println(str3.indexOf(97));
+    System.out.println(str3.indexOf("ab"));
+    System.out.println(str3.indexOf('.', 5));
+    System.out.println(str3.indexOf("?"));
+    System.out.println("last index of . : "+ str3.lastIndexOf("."));
+    System.out.println("last index of . : "+ str3.lastIndexOf(".",6));
+    System.out.println("index of w : "+ str3.indexOf("w"));
+    System.out.println("last index of w : "+ str3.lastIndexOf("w"));
 
-    System.out.printf("%s\n", str);
-    System.out.printf("%20s\n", str);
-    System.out.printf("%-20s", str);
+    String a = "JAVA", b = "java", c = "python", d = "python";
+    System.out.println(c.equals(d));  // true
+    System.out.println(a.equals(b));   // false
+    System.out.println(a.equalsIgnoreCase(b));  // true
+
+    System.out.println(a.compareTo(b));   // -1
+    System.out.println(c.compareTo(b));   // 1
+    System.out.println(b.compareTo(c));   // -1
+    System.out.println(c.compareTo(d));   // 0
+    
+    String str4 = "java";
+    String str5 = "java";
+    String str6 = new String("java");
+
+    System.out.println(".equals : "+ str4.equals(str5));
+    System.out.println("== : "+ (str4 == str5));
+
+    System.out.println(".equals : "+ str4.equals(str6));
+    System.out.println("== : "+ (str4 == str6));
+
+    System.out.println(String.valueOf(3));
+    
+    String s = "the great wall of china";
+    System.out.println("contains : "+s.contains("t wall"));
+
   }
 }
