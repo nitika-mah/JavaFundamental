@@ -1,4 +1,4 @@
-package loops;
+package loops.patterns;
 
 public class Patterns1 {
   public static void main(String[] args) {
